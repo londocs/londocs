@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LONDO | Creative Solutions</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#ffffff;
+color:#111111;
+line-height:1.6;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+padding:30px 0;
+position:fixed;
+width:100%;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:1.4rem;
+font-weight:700;
+letter-spacing:4px;
+}
+
+.nav a{
+text-decoration:none;
+color:#111;
+margin-left:25px;
+font-weight:500;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px 80px;
+}
+
+.hero h1{
+font-size:clamp(3rem,8vw,7rem);
+letter-spacing:10px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+max-width:700px;
+margin:auto;
+color:#555;
+}
+
+.cta{
+margin-top:40px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#111;
+color:white;
+text-decoration:none;
+border-radius:50px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.section{
+padding:120px 0;
+}
+
+.section-title{
+font-size:2.5rem;
+margin-bottom:50px;
+text-align:center;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+padding:35px;
+border:1px solid #eee;
+border-radius:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h3{
+margin-bottom:15px;
+}
+
+.about{
+max-width:800px;
+margin:auto;
+text-align:center;
+font-size:1.1rem;
+color:#555;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact p{
+margin-bottom:15px;
+font-size:1.1rem;
+}
+
+footer{
+padding:50px 0;
+text-align:center;
+border-top:1px solid #eee;
+color:#777;
+}
+
+@media(max-width:768px){
+
+.nav{
+flex-direction:column;
+gap:15px;
+}
+
+.hero h1{
+letter-spacing:6px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<div class="logo">LONDO</div>
+
+<nav>
+<a href="#servicios">Servicios</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div>
+<h1>LONDO</h1>
+
+<p>
+Diseño, fotografía y soluciones creativas para marcas y personas
+que buscan destacar con una identidad visual moderna, estratégica y auténtica.
+</p>
+
+<div class="cta">
+<a href="#contacto" class="btn">Hablemos</a>
+</div>
+</div>
+</section>
+
+<section class="section" id="servicios">
+<div class="container">
+
+<h2 class="section-title">Servicios</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Fotografía</h3>
+<p>
+Sesiones profesionales para marcas, productos, espacios y proyectos.
+</p>
+</div>
+
+<div class="card">
+<h3>Diseño Gráfico</h3>
+<p>
+Creación de piezas visuales modernas para medios digitales e impresos.
+</p>
+</div>
+
+<div class="card">
+<h3>Branding</h3>
+<p>
+Construcción de identidades visuales sólidas y memorables.
+</p>
+</div>
+
+<div class="card">
+<h3>Contenido Digital</h3>
+<p>
+Diseño de contenido para redes sociales y comunicación visual.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section" id="nosotros">
+
+<div class="container">
+
+<h2 class="section-title">Nuestra visión</h2>
+
+<div class="about">
+
+<p>
+LONDO nace con la idea de unir creatividad, diseño y estrategia en una sola experiencia.
+Creemos que cada proyecto merece una identidad única y una ejecución impecable.
+Actualmente estamos construyendo nuevas soluciones y expandiendo nuestros servicios para ofrecer una experiencia cada vez más completa.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="contacto">
+
+<div class="container contact">
+
+<h2 class="section-title">Contacto</h2>
+
+<p>¿Tienes una idea o proyecto?</p>
+
+<p>
+Escríbenos y conversemos.
+</p>
+
+<a class="btn" href="https://instagram.com/londo.co" target="_blank">
+Instagram
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+© 2026 LONDO. Todos los derechos reservados.
+</div>
+
+</footer>
+
+</body>
+</html>
