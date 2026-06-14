@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>LONDO | Creative Studio</title>
+
+<meta name="description" content="LONDO Creative Studio. Fotografía, branding, diseño y soluciones digitales para marcas modernas.">
+
+<meta property="og:title" content="LONDO Creative Studio">
+<meta property="og:description" content="Create. Design. Connect.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://londocs.com">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -17,124 +27,142 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Inter',sans-serif;
-background:#ffffff;
-color:#111111;
-line-height:1.6;
+background:#050505;
+color:white;
+overflow-x:hidden;
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
-
-header{
-padding:30px 0;
-position:fixed;
-width:100%;
-background:rgba(255,255,255,.95);
-backdrop-filter:blur(10px);
-z-index:100;
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:1.4rem;
-font-weight:700;
-letter-spacing:4px;
-}
-
-.nav a{
-text-decoration:none;
-color:#111;
-margin-left:25px;
-font-weight:500;
+section{
+padding:120px 8%;
 }
 
 .hero{
-min-height:100vh;
+height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
-padding:120px 20px 80px;
+background:
+radial-gradient(circle at top,
+#181818,
+#050505 70%);
 }
 
-.hero h1{
-font-size:clamp(3rem,8vw,7rem);
-letter-spacing:10px;
-margin-bottom:20px;
+.hero-content{
+max-width:900px;
+animation:fadeIn 1.5s ease;
 }
 
-.hero p{
-font-size:1.2rem;
-max-width:700px;
-margin:auto;
-color:#555;
+.hero-logo{
+width:min(700px,90%);
+height:auto;
+margin-bottom:40px;
 }
 
-.cta{
-margin-top:40px;
+.tagline{
+font-size:clamp(1.4rem,3vw,2.3rem);
+font-weight:300;
+line-height:1.6;
+margin-bottom:25px;
+}
+
+.subtitle{
+color:#9d9d9d;
+letter-spacing:3px;
+text-transform:uppercase;
+margin-bottom:45px;
+font-size:.95rem;
 }
 
 .btn{
 display:inline-block;
-padding:15px 35px;
-background:#111;
-color:white;
+padding:16px 38px;
+border:1px solid rgba(255,255,255,.2);
+border-radius:60px;
 text-decoration:none;
-border-radius:50px;
-transition:.3s;
+color:white;
+transition:.35s;
 }
 
 .btn:hover{
+background:white;
+color:black;
 transform:translateY(-3px);
 }
 
-.section{
-padding:120px 0;
+.section-title{
+font-size:clamp(2.5rem,5vw,5rem);
+margin-bottom:30px;
 }
 
-.section-title{
-font-size:2.5rem;
-margin-bottom:50px;
+.lead{
+max-width:900px;
+font-size:1.2rem;
+line-height:1.9;
+color:#b5b5b5;
+}
+
+.statement{
 text-align:center;
+}
+
+.statement h2{
+font-size:clamp(3rem,8vw,8rem);
+font-weight:600;
+line-height:1.1;
 }
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+gap:25px;
 }
 
-.card{
-padding:35px;
-border:1px solid #eee;
-border-radius:20px;
+.service{
+font-size:clamp(2rem,6vw,5rem);
+font-weight:600;
+opacity:.3;
 transition:.3s;
+cursor:pointer;
 }
 
-.card:hover{
-transform:translateY(-5px);
+.service:hover{
+opacity:1;
+transform:translateX(10px);
 }
 
-.card h3{
-margin-bottom:15px;
+.portfolio{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px;
 }
 
-.about{
-max-width:800px;
-margin:auto;
+.portfolio img{
+width:100%;
+height:500px;
+object-fit:cover;
+border-radius:20px;
+transition:.4s;
+}
+
+.portfolio img:hover{
+transform:scale(1.02);
+}
+
+.quote{
 text-align:center;
-font-size:1.1rem;
-color:#555;
+}
+
+.quote h2{
+font-size:clamp(2rem,6vw,5rem);
+max-width:1000px;
+margin:auto;
+line-height:1.3;
 }
 
 .contact{
@@ -142,151 +170,210 @@ text-align:center;
 }
 
 .contact p{
-margin-bottom:15px;
+color:#b5b5b5;
+margin:20px auto 40px;
+max-width:700px;
 font-size:1.1rem;
 }
 
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
 footer{
-padding:50px 0;
+padding:50px 20px;
 text-align:center;
-border-top:1px solid #eee;
 color:#777;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:all .9s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#111;
+border:1px solid rgba(255,255,255,.2);
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+color:white;
+font-size:24px;
+z-index:999;
 }
 
 @media(max-width:768px){
 
-.nav{
-flex-direction:column;
-gap:15px;
+section{
+padding:90px 7%;
 }
 
-.hero h1{
-letter-spacing:6px;
+.portfolio img{
+height:350px;
 }
 
 }
 
 </style>
+
 </head>
+
 <body>
 
-<header>
-<div class="container nav">
-<div class="logo">LONDO</div>
-    
-<nav>
-<a href="#servicios">Servicios</a>
-<a href="#nosotros">Nosotros</a>
-<a href="#contacto">Contacto</a>
-</nav>
-</div>
-</header>
-
 <section class="hero">
-<div>
-<img src="logo.png" alt="LONDO Logo" class="hero-logo">
 
-<p>
-LONDO es un estudio creativo enfocado en fotografía, branding, diseño y contenido digital.
-Creamos experiencias visuales que combinan estética, propósito y resultados.
-</p>
+<div class="hero-content">
 
-<div class="cta">
-<a href="#contacto" class="btn">Hablemos</a>
+<img src="logo.png" alt="LONDO" class="hero-logo">
+
+<div class="tagline">
+Create.<br>
+Design.<br>
+Connect.
 </div>
+
+<div class="subtitle">
+Creative Studio
 </div>
+
+<a href="#contacto" class="btn">
+Iniciar Proyecto
+</a>
+
+</div>
+
 </section>
 
-<section class="section" id="servicios">
-<div class="container">
+<section class="statement fade">
 
-<h2 class="section-title">Servicios</h2>
+<h2 class="section-title">
+Menos ruido.<br>
+Más impacto.
+</h2>
+
+<p class="lead">
+Creamos experiencias visuales que ayudan a marcas,
+negocios y personas a destacar en un mundo saturado de contenido.
+</p>
+
+</section>
+
+<section class="fade">
 
 <div class="services">
 
-<div class="card">
-<h3>Fotografía</h3>
-<p>
-Sesiones profesionales para marcas, productos, espacios y proyectos.
-</p>
-</div>
-
-<div class="card">
-<h3>Diseño Gráfico</h3>
-<p>
-Creación de piezas visuales modernas para medios digitales e impresos.
-</p>
-</div>
-
-<div class="card">
-<h3>Branding</h3>
-<p>
-Construcción de identidades visuales sólidas y memorables.
-</p>
-</div>
-
-<div class="card">
-<h3>Contenido Digital</h3>
-<p>
-Diseño de contenido para redes sociales y comunicación visual.
-</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section class="section" id="nosotros">
-
-<div class="container">
-
-<h2 class="section-title">Nuestra visión</h2>
-
-<div class="about">
-
-<p>
-LONDO nace con la idea de unir creatividad, diseño y estrategia en una sola experiencia.
-Creemos que cada proyecto merece una identidad única y una ejecución impecable.
-Actualmente estamos construyendo nuevas soluciones y expandiendo nuestros servicios para ofrecer una experiencia cada vez más completa.
-</p>
-
-</div>
+<div class="service">PHOTOGRAPHY</div>
+<div class="service">BRANDING</div>
+<div class="service">DESIGN</div>
+<div class="service">DIGITAL</div>
 
 </div>
 
 </section>
 
-<section class="section" id="contacto">
+<section class="quote fade">
 
-<div class="container contact">
+<h2>
+No creamos contenido.<br>
+Creamos experiencias.
+</h2>
 
-<h2 class="section-title">Contacto</h2>
+</section>
 
-<p>¿Tienes una idea o proyecto?</p>
+<section class="fade">
+
+<div class="portfolio">
+
+<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32">
+<img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+<img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518">
+
+</div>
+
+</section>
+
+<section id="contacto" class="contact fade">
+
+<h2 class="section-title">
+¿Tienes una idea?
+</h2>
 
 <p>
-Escríbenos y conversemos.
+Construyámosla juntos.
 </p>
 
-<a class="btn" href="https://instagram.com/londo.cs" target="_blank">
+<div class="contact-buttons">
+
+<a href="https://wa.me/573104728307" target="_blank" class="btn">
+WhatsApp
+</a>
+
+<a href="https://instagram.com/londo.cs" target="_blank" class="btn">
 Instagram
 </a>
 
-<a class="btn" href="https://wa.me/573104728307" class="whatsapp">
-WhatsApp
-</a>
 </div>
 
 </section>
 
 <footer>
 
-<div class="container">
-© 2026 LONDO. Todos los derechos reservados.
-</div>
+© 2026 LONDO Creative Studio
 
 </footer>
+
+<a href="https://wa.me/573104728307" class="whatsapp" target="_blank">
+✦
+</a>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+
+});
+
+});
+
+document.querySelectorAll('.fade').forEach(el=>{
+observer.observe(el);
+});
+
+</script>
 
 </body>
 </html>
